@@ -1,40 +1,32 @@
-# Cmsmadesimple CMS Reflected XSS v2.2.18
+# pluck CMS 4.7.18 Reflected XSS
 
 ## Author: (Sergio)
 
-**Description:** Multiple Cross-Site Scripting (XSS) vulnerabilities in installation of  cmsmadesimple v.2.2.18 allows a local attacker to execute arbitrary web scripts via a crafted payload injected into the Database Name, DataBase User or Database Port.
+**Description:** Multiple Cross-Site Scripting (XSS) vulnerabilities in installation of PluckCMS v.4.7.18 allows a local attacker to execute arbitrary code via a crafted payload injected into the cont1 and cont2 parameters in the installation process- Website Name.
 
-**Attack Vectors:** A vulnerability in the installation sanitation in the Database name, user name and port allows JavaScript code to be injected.
+**Attack Vectors:** AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L
 
 ---
 
 ### POC:
 
 
-During the installation process we enter the XSS payload in any of the 3 fields and when we click on next, we will obtain the XSS pop-up
+During the installation process we enter the XSS payload in any of the 2 parameters and when we click on next, we will obtain the XSS pop-up
 
 ### XSS Payload:
 
 ```js
-"' on focus="alert(1)" autofocus="
+<img src=x:alert(alt) onerror=eval(src) alt='XSS Page'>
 ```
 
 
 In the following image you can see the embedded code that executes the payload in the instalaltion process.
-![imagen](https://github.com/sromanhu/Cmsmadesimple-CMS-Stored-XSS/assets/87250597/5858abd6-73ad-4e76-881f-7b4efe090c6e)
+![XSS Installation](https://github.com/sromanhu/-Pluck-CMS-Reflected-XSS---Installation/assets/87250597/a8176ca3-79f0-49b5-8068-396f085d1818)
 
 
-![imagen](https://github.com/sromanhu/Cmsmadesimple-CMS-Stored-XSS/assets/87250597/426542dc-cebc-4c5f-98a7-695837889d34)
+And below is evidence of the execution of the payload when accessing the main website:
+![XSS Resultado](https://github.com/sromanhu/-Pluck-CMS-Reflected-XSS---Installation/assets/87250597/efd33235-5dc4-4ab3-bfd5-f45202980b3d)
 
-
-![imagen](https://github.com/sromanhu/Cmsmadesimple-CMS-Stored-XSS/assets/87250597/fef08e57-214e-4357-b8f0-eec40b12fce5)
-
-
-![imagen](https://github.com/sromanhu/Cmsmadesimple-CMS-Stored-XSS/assets/87250597/7825fac8-bd75-40d7-aee4-530ebd9e3b5f)
-
-![image](https://github.com/sromanhu/Cmsmadesimple-CMS-Reflected-XSS/assets/87250597/7806fca2-d08c-4a0b-9b30-e1e7b092a195)
-
-![imagen](https://github.com/sromanhu/Cmsmadesimple-CMS-Stored-XSS/assets/87250597/8d580af3-2e89-4f17-a3a6-9096fec22b4c)
 
 
 
@@ -42,7 +34,7 @@ In the following image you can see the embedded code that executes the payload i
 
 ### Additional Information:
 
-http://www.cmsmadesimple.org/
+https://github.com/pluck-cms
 
 https://owasp.org/Top10/es/A03_2021-Injection/
 
