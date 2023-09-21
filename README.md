@@ -1,4 +1,4 @@
-# pluck CMS 4.7.18 Reflected XSS
+# Pluck CMS 4.7.18 Reflected XSS
 
 ## Author: (Sergio)
 
